@@ -1,8 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Open_Sans } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
+import MarginWidthWrapper from '@/components/ui/margin-width-wrapper'
+import PageWrapper from '@/components/ui/page-wrapper'
+import Header from '@/components/ui/header'
+import SideNav from '@/components/ui/side-nav'
+import HeaderMobile from '@/components/ui/header-mobile'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +22,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          > 
+          <SideNav />
+          <MarginWidthWrapper>
+            <Header />
+            <HeaderMobile />
+            <PageWrapper>{children}</PageWrapper>
+          </MarginWidthWrapper>
+       </ThemeProvider>     
+       </body>
     </html>
   )
 }

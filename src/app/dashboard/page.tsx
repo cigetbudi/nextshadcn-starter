@@ -1,8 +1,9 @@
-export default function Home() {
+
+export default function DashboardPage() {
   return (
     <main>
       <div>
-        HOME AJA
+        DashboardPage
       </div>
     </main>
   )

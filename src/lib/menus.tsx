@@ -17,7 +17,7 @@ export type MenuItemWIthSubMenuProps = {
 export const SIDENAV_ITEMS: SidenavItem[] = [
     { 
         title: "Dashboard",
-        path: "/",
+        path: "/dashboard",
         icon: <Icon icon="tabler:align-box-bottom-center" width="24" height="24" />,
     },
     {

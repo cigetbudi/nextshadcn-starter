@@ -1,10 +1,12 @@
-
+import PageTitle from '@/components/ui/page-title';
+import TopCards from './components/top-cards';
 export default function DashboardPage() {
+
   return (
     <main>
-      <div>
-        DashboardPage
-      </div>
+     <PageTitle title="Dashboard" subtext='Overview the result'/>
+     <TopCards />
     </main>
   )
 }
+
